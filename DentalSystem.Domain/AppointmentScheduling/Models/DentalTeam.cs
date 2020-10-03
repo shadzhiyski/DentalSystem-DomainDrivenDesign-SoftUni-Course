@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.AppointmentScheduling.Models
@@ -9,8 +10,12 @@ namespace DentalSystem.Domain.AppointmentScheduling.Models
             string name)
         {
             Name = name;
+
+            Participants = new List<DentalWorker>();
         }
 
         public string Name { get; private set; }
+
+        public IList<DentalWorker> Participants { get; private set; }
     }
 }
