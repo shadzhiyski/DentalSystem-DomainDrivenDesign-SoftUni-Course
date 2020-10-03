@@ -1,9 +1,10 @@
 using System;
+using DentalSystem.Domain.Common;
 using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.Payments.Models
 {
-    public class Payment : Entity<Guid>
+    public class Payment : Entity<Guid>, IAggregateRoot
     {
         internal Payment(
             Money amount,
