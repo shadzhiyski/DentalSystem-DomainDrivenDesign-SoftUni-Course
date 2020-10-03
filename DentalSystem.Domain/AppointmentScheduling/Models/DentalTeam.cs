@@ -6,15 +6,11 @@ namespace DentalSystem.Domain.AppointmentScheduling.Models
     public class DentalTeam : Entity<Guid>
     {
         internal DentalTeam(
-            string name,
-            Room room)
+            string name)
         {
             Name = name;
-            Room = room;
         }
 
         public string Name { get; private set; }
-        
-        public Room Room { get; private set; }
     }
 }
