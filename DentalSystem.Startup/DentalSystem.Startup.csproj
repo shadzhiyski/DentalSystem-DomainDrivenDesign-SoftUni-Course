@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DentalSystem.Infrastructure\DentalSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\DentalSystem.Web\DentalSystem.Web.csproj" />
+  </ItemGroup>
 
 </Project>

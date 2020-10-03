@@ -10,5 +10,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0-rc.1.20451.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0-rc.1.20451.13" />
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <ProjectReference Include="..\DentalSystem.Application\DentalSystem.Application.csproj" />
+  </ItemGroup>
+
 </Project>
