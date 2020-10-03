@@ -1,5 +1,3 @@
-using DentalSystem.Domain.Common.Models;
-
 namespace DentalSystem.Domain.Common.Models
 {
     public class FullName : ValueObject
