@@ -6,6 +6,17 @@ namespace DentalSystem.Domain.AppointmentScheduling.Models
     public class Appointment : Entity<Guid>
     {
         internal Appointment(
+            TreatmentType treatmentType)
+            : this(
+                default!,
+                default!,
+                treatmentType,
+                default!,
+                default!
+            )
+        { }
+
+        internal Appointment(
             DentalTeam dentalTeam,
             Patient patient,
             TreatmentType treatmentType,

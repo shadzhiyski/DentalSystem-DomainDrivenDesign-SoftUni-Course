@@ -6,6 +6,10 @@ namespace DentalSystem.Domain.Payments.Models
 {
     public class Payment : Entity<Guid>, IAggregateRoot
     {
+        internal Payment()
+            : this(default!, default!, default!, default!)
+        { }
+
         internal Payment(
             Money amount,
             PaymentMethod paymentMethod,

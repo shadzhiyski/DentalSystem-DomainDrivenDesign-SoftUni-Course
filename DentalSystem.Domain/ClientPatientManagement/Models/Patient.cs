@@ -5,6 +5,10 @@ namespace DentalSystem.Domain.ClientPatientManagement.Models
 {
     public class Patient : Entity<Guid>
     {
+        internal Patient(Gender gender)
+            : this(gender, default!)
+        { }
+
         internal Patient(
             Gender gender,
             Client client)

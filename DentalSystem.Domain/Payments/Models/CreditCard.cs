@@ -5,6 +5,10 @@ namespace DentalSystem.Domain.Payments.Models
 {
     public class CreditCard : Entity<Guid>
     {
+        internal CreditCard()
+            : this(default!, default!, default!, default!, default!)
+        { }
+
         internal CreditCard(
             string number,
             string cvcCode,

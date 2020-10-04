@@ -5,6 +5,10 @@ namespace DentalSystem.Domain.AppointmentScheduling.Models
 {
     public class DentalWorker : Entity<Guid>
     {
+        internal DentalWorker(DentalWorkerJobType jobType)
+            : this(default!, jobType, default!)
+        { }
+
         internal DentalWorker(
             FullName fullName, 
             DentalWorkerJobType jobType,

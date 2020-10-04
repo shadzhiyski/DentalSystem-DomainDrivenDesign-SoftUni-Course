@@ -6,6 +6,10 @@ namespace DentalSystem.Domain.ClientPatientManagement.Models
 {
     public class Client : Entity<Guid>, IAggregateRoot
     {
+        internal Client()
+            : this(default!, default!, default!)
+        { }
+        
         internal Client(
             FullName fullName,
             PhoneNumber phoneNumber,

@@ -6,6 +6,10 @@ namespace DentalSystem.Domain.Payments.Models
 {
     public class Client : Entity<Guid>
     {
+        internal Client() 
+            : this(default!, default!)
+        { }
+
         internal Client(
             FullName fullName,
             string emailAddress)
