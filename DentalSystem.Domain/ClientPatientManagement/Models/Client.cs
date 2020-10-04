@@ -8,14 +8,18 @@ namespace DentalSystem.Domain.ClientPatientManagement.Models
     {
         internal Client(
             FullName fullName,
+            PhoneNumber phoneNumber,
             Patient patient)
         {
             FullName = fullName;
+            PhoneNumber = phoneNumber;
             Patient = patient;
         }
 
         public FullName FullName { get; private set; }
 
+        public PhoneNumber PhoneNumber { get; private set; }
+        
         public Patient Patient { get; private set; }
     }
 }
