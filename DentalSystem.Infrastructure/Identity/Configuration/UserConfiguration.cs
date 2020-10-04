@@ -8,9 +8,9 @@ namespace DentalSystem.Infrastructure.Identity.Configuration
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder
-                .HasOne(u => u.Patient)
+                .HasOne(u => u.Client)
                 .WithOne()
-                .HasForeignKey<User>("PatientId")
+                .HasForeignKey<User>("ClientId")
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

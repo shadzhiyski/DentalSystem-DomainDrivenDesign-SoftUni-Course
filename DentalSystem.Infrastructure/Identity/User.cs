@@ -1,6 +1,6 @@
 using DentalSystem.Application.Identity;
-using DentalSystem.Domain.AppointmentScheduling.Exceptions;
-using DentalSystem.Domain.AppointmentScheduling.Models;
+using DentalSystem.Domain.ClientPatientManagement.Exceptions;
+using DentalSystem.Domain.ClientPatientManagement.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace DentalSystem.Infrastructure.Identity
@@ -11,16 +11,16 @@ namespace DentalSystem.Infrastructure.Identity
             : base(email)
             => this.Email = email;
 
-        public Patient? Patient { get; private set; }
+        public Client? Client { get; private set; }
 
-        public void BecomePatient(Patient dealer)
+        public void BecomeClient(Client client)
         {
-            if (this.Patient != null)
+            if (this.Client != null)
             {
-                throw new InvalidPatientException($"User '{this.UserName}' is already a patient.");
+                throw new InvalidClientException($"User '{this.UserName}' is already a client.");
             }
 
-            this.Patient = dealer;
+            this.Client = client;
         }
     }
 }

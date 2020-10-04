@@ -1,9 +1,11 @@
-using DentalSystem.Domain.AppointmentScheduling.Models;
+
+
+using DentalSystem.Domain.ClientPatientManagement.Models;
 
 namespace DentalSystem.Application.Identity
 {
     public interface IUser
     {
-        void BecomePatient(Patient patient);
+        void BecomeClient(Client client);
     }
 }
