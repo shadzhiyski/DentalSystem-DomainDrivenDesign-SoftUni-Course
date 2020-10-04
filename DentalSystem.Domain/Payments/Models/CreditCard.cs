@@ -9,13 +9,13 @@ namespace DentalSystem.Domain.Payments.Models
             string number,
             string cvcCode,
             DateTimeOffset expirationDate,
-            Client cardHolder,
+            Client holder,
             bool isMain)
         {
             Number = number;
             CvcCode = cvcCode;
             ExpirationDate = expirationDate;
-            CardHolder = cardHolder;
+            Holder = holder;
             IsMain = isMain;
         }
 
@@ -25,7 +25,7 @@ namespace DentalSystem.Domain.Payments.Models
 
         public DateTimeOffset ExpirationDate { get; private set; }
 
-        public Client CardHolder { get; private set; }
+        public Client Holder { get; private set; }
 
         public bool IsMain { get; private set; }
     }
