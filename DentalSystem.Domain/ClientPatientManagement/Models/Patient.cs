@@ -1,8 +1,9 @@
+using System;
 using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.ClientPatientManagement.Models
 {
-    public class Patient
+    public class Patient : Entity<Guid>
     {
         internal Patient(
             Gender gender,
