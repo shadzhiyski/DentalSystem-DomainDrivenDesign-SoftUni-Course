@@ -6,15 +6,19 @@ namespace DentalSystem.Domain.AppointmentScheduling.Models
     public class Client : Entity<Guid>
     {
         internal Client()
-            : this(default!)
+            : this(default!, default!)
         { }
 
         internal Client(
-            FullName fullName)
+            FullName fullName,
+            Patient patient)
         {
             FullName = fullName;
+            Patient = patient;
         }
 
         public FullName FullName { get; private set; }
+        
+        public Patient Patient { get; private set; }
     }
 }
