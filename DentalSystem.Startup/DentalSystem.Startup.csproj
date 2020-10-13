@@ -9,4 +9,8 @@
     <ProjectReference Include="..\DentalSystem.Web\DentalSystem.Web.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+  </ItemGroup>
+
 </Project>

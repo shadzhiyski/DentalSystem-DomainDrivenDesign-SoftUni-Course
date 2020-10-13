@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using DentalSystem.Web;
+using Microsoft.OpenApi.Models;
 
 namespace DentalSystem.Startup
 {
@@ -29,7 +30,41 @@ namespace DentalSystem.Startup
         {
             services
                 .AddInfrastructure(this.Configuration)
-                .AddWebComponents();
+                .AddWebComponents()
+                .AddSwaggerGen(c =>
+                {
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
+                    {
+                        Description = "JWT Authorization header using the Bearer scheme.",
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Scheme = "bearer",
+                        Type = SecuritySchemeType.Http,
+                        BearerFormat = "JWT"
+                    });
+
+                    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference 
+                                { 
+                                    Type = ReferenceType.SecurityScheme, 
+                                    Id = "Bearer" 
+                                }
+                            },
+                            new List<string>()
+                        }
+                    });
+                    
+                    c.SwaggerDoc("v1", 
+                    new OpenApiInfo 
+                    { 
+                        Title = "Dental System",
+                        Version = "v1" 
+                    });
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +84,12 @@ namespace DentalSystem.Startup
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
     }
