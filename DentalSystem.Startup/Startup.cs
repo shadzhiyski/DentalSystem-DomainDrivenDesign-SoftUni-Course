@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using DentalSystem.Web;
 
 namespace DentalSystem.Startup
 {
@@ -28,7 +29,7 @@ namespace DentalSystem.Startup
         {
             services
                 .AddInfrastructure(this.Configuration)
-                .AddControllers();
+                .AddWebComponents();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
