@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using DentalSystem.Web;
 using Microsoft.OpenApi.Models;
+using DentalSystem.Application;
+using DentalSystem.Domain;
 
 namespace DentalSystem.Startup
 {
@@ -29,6 +31,8 @@ namespace DentalSystem.Startup
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddDomain()
+                .AddApplication(this.Configuration)
                 .AddInfrastructure(this.Configuration)
                 .AddWebComponents()
                 .AddSwaggerGen(c =>
