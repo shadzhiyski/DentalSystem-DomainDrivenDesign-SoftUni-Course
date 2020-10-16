@@ -1,4 +1,4 @@
-namespace DentalSystem.Domain.Payments.Models
+namespace DentalSystem.Domain.Core.Payments.Models
 {
     public enum PaymentMethod
     {

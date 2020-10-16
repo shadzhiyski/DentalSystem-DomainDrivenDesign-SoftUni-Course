@@ -2,7 +2,7 @@ using System;
 using DentalSystem.Domain.Common;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.Payments.Models
+namespace DentalSystem.Domain.Core.Payments.Models
 {
     public class Payment : Entity<Guid>, IAggregateRoot
     {

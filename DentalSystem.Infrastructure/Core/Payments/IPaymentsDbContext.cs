@@ -1,4 +1,4 @@
-using DentalSystem.Domain.Payments.Models;
+using DentalSystem.Domain.Core.Payments.Models;
 using DentalSystem.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 

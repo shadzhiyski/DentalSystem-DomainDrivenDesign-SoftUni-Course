@@ -167,7 +167,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("Patient");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.Client", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("TEXT");
@@ -181,7 +181,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("Client");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.CreditCard", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.CreditCard", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -211,7 +211,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("CreditCard");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.Payment", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.Payment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -629,11 +629,11 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.Client", b =>
                 {
                     b.HasOne("DentalSystem.Domain.Core.ClientPatientManagement.Models.Client", null)
                         .WithOne()
-                        .HasForeignKey("DentalSystem.Domain.Payments.Models.Client", "Id")
+                        .HasForeignKey("DentalSystem.Domain.Core.Payments.Models.Client", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -662,9 +662,9 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.CreditCard", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.CreditCard", b =>
                 {
-                    b.HasOne("DentalSystem.Domain.Payments.Models.Client", "Holder")
+                    b.HasOne("DentalSystem.Domain.Core.Payments.Models.Client", "Holder")
                         .WithMany("CreditCards")
                         .HasForeignKey("HolderId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -673,20 +673,20 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.Navigation("Holder");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.Payment", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.Payment", b =>
                 {
-                    b.HasOne("DentalSystem.Domain.Payments.Models.Client", "Client")
+                    b.HasOne("DentalSystem.Domain.Core.Payments.Models.Client", "Client")
                         .WithMany("Payments")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DentalSystem.Domain.Payments.Models.CreditCard", "CreditCard")
+                    b.HasOne("DentalSystem.Domain.Core.Payments.Models.CreditCard", "CreditCard")
                         .WithMany()
                         .HasForeignKey("CreditCardId")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.OwnsOne("DentalSystem.Domain.Payments.Models.Money", "Amount", b1 =>
+                    b.OwnsOne("DentalSystem.Domain.Core.Payments.Models.Money", "Amount", b1 =>
                         {
                             b1.Property<Guid>("PaymentId")
                                 .HasColumnType("TEXT");
@@ -782,7 +782,7 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.Payments.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.Payments.Models.Client", b =>
                 {
                     b.Navigation("CreditCards");
 

@@ -56,13 +56,13 @@ namespace DentalSystem.Infrastructure.Common.Persistence
         DbSet<Domain.Core.ClientPatientManagement.Models.Patient> IClientPatientManagementDbContext.Patients
             => Set<Domain.Core.ClientPatientManagement.Models.Patient>();
 
-        DbSet<Domain.Payments.Models.Client> IPaymentsDbContext.Clients
-            => Set<Domain.Payments.Models.Client>();
+        DbSet<Domain.Core.Payments.Models.Client> IPaymentsDbContext.Clients
+            => Set<Domain.Core.Payments.Models.Client>();
 
-        DbSet<Domain.Payments.Models.CreditCard> IPaymentsDbContext.CreditCards
-            => Set<Domain.Payments.Models.CreditCard>();
+        DbSet<Domain.Core.Payments.Models.CreditCard> IPaymentsDbContext.CreditCards
+            => Set<Domain.Core.Payments.Models.CreditCard>();
 
-        DbSet<Domain.Payments.Models.Payment> IPaymentsDbContext.Payments
-            => Set<Domain.Payments.Models.Payment>();
+        DbSet<Domain.Core.Payments.Models.Payment> IPaymentsDbContext.Payments
+            => Set<Domain.Core.Payments.Models.Payment>();
     }
 }

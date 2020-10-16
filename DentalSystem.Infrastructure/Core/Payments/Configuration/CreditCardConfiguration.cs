@@ -1,4 +1,4 @@
-using DentalSystem.Domain.Payments.Models;
+using DentalSystem.Domain.Core.Payments.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
