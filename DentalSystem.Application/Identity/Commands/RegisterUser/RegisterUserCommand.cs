@@ -22,8 +22,8 @@
             private readonly IClientPatientManagementRepository _clientPatientManagementRepository;
 
             public CreateUserCommandHandler(
-                IIdentity identity, 
-                IClientBuilder clientBuilder, 
+                IIdentity identity,
+                IClientBuilder clientBuilder,
                 IClientPatientManagementRepository clientPatientManagementRepository)
             {
                 _identity = identity;
