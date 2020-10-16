@@ -6,6 +6,8 @@ namespace DentalSystem.Domain.ClientPatientManagement.Builders
 {
     public interface IClientBuilder : IFactory<Client>
     {
+        IClientBuilder WithUserId(string userId);
+
         IClientBuilder WithNames(string firstName, string lastName);
 
         IClientBuilder WithPhoneNumber(string phoneNumber);

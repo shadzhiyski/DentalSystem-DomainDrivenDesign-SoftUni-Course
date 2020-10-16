@@ -45,6 +45,7 @@
                 var user = result.Data;
 
                 var client = _clientBuilder
+                    .WithUserId(user.Id)
                     .WithNames(request.FirstName, request.LastName)
                     .WithPhoneNumber(request.PhoneNumber)
                     .Build();

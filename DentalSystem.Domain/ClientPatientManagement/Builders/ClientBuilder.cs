@@ -16,7 +16,7 @@ namespace DentalSystem.Domain.ClientPatientManagement.Builders
             return new Client(_userId, _fullName, _phoneNumber, patient);
         }
 
-        public IClientBuilder WithUserid(string userId)
+        public IClientBuilder WithUserId(string userId)
         {
             _userId = userId;
             return this;
