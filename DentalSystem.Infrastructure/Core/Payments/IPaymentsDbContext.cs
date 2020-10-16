@@ -1,9 +1,10 @@
 using DentalSystem.Domain.Payments.Models;
+using DentalSystem.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace DentalSystem.Infrastructure.Core.Payments
 {
-    public interface IPaymentsDbContext
+    public interface IPaymentsDbContext : IDbContext
     {
         DbSet<Client> Clients { get; }
 

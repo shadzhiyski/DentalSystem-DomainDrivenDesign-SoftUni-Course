@@ -1,9 +1,10 @@
 using DentalSystem.Domain.AppointmentScheduling.Models;
+using DentalSystem.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace DentalSystem.Infrastructure.Core.AppointmentScheduling
 {
-    public interface IAppointmentSchedulingDbContext
+    public interface IAppointmentSchedulingDbContext : IDbContext
     {
         DbSet<Appointment> Appointments { get; }
 
