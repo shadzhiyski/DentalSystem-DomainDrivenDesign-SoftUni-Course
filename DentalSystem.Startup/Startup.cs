@@ -38,7 +38,7 @@ namespace DentalSystem.Startup
                 .AddWebComponents()
                 .AddSwaggerGen(c =>
                 {
-                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
+                    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                     {
                         Description = "JWT Authorization header using the Bearer scheme.",
                         Name = "Authorization",
@@ -53,21 +53,21 @@ namespace DentalSystem.Startup
                         {
                             new OpenApiSecurityScheme
                             {
-                                Reference = new OpenApiReference 
-                                { 
-                                    Type = ReferenceType.SecurityScheme, 
-                                    Id = "Bearer" 
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
                                 }
                             },
                             new List<string>()
                         }
                     });
-                    
-                    c.SwaggerDoc("v1", 
-                    new OpenApiInfo 
-                    { 
+
+                    c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
                         Title = "Dental System",
-                        Version = "v1" 
+                        Version = "v1"
                     });
                 });
         }
