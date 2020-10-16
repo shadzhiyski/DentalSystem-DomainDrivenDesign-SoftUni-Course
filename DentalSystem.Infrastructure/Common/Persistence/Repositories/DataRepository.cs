@@ -16,7 +16,7 @@
 
         protected IQueryable<TEntity> All() => this.Data.Set<TEntity>();
 
-        public async Task Save(
+        public async Task SaveAsync(
             TEntity entity,
             CancellationToken cancellationToken = default)
         {
