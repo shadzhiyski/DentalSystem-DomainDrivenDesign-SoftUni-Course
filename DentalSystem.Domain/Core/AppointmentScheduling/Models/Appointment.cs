@@ -1,9 +1,10 @@
 using System;
+using DentalSystem.Domain.Common;
 using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
 {
-    public class Appointment : Entity<Guid>
+    public class Appointment : Entity<Guid>, IAggregateRoot
     {
         internal Appointment(
             TreatmentType treatmentType)
@@ -37,7 +38,7 @@ namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
         public TreatmentType TreatmentType { get; private set; }
 
         public DateTimeRange TimeRange { get; private set; }
-        
+
         public Room Room { get; private set; }
     }
 }

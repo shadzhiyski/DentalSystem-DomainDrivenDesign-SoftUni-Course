@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using DentalSystem.Domain.Common;
 using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
 {
-    public class Schedule : Entity<Guid>, IAggregateRoot
+    public class Schedule : Entity<Guid>
     {
         private readonly List<Appointment> _appointments;
 
         public DateTimeRange DateRange { get; private set; }
 
-        public IReadOnlyList<Appointment> Appointments 
+        public IReadOnlyList<Appointment> Appointments
             => _appointments.AsReadOnly();
 
         internal Schedule(
