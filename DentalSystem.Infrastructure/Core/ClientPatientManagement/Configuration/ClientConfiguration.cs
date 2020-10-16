@@ -8,6 +8,8 @@ namespace DentalSystem.Infrastructure.Core.ClientPatientManagement.Configuration
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
+            builder.ToTable(nameof(Client));
+
             builder
                 .HasKey(e => e.Id);
 
@@ -17,7 +19,7 @@ namespace DentalSystem.Infrastructure.Core.ClientPatientManagement.Configuration
                     o.Property(op => op.FirstName);
                     o.Property(op => op.LastName);
                 });
-            
+
             builder
                 .OwnsOne(e => e.PhoneNumber, o => o.Property(op => op.Number));
         }

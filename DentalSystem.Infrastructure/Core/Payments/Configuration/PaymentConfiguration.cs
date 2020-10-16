@@ -8,26 +8,28 @@ namespace DentalSystem.Infrastructure.Core.Payments.Configuration
     {
         public void Configure(EntityTypeBuilder<Payment> builder)
         {
+            builder.ToTable(nameof(Payment));
+
             builder
                 .HasKey(e => e.Id);
-            
+
             builder
-                .OwnsOne(e => e.Amount, o => 
+                .OwnsOne(e => e.Amount, o =>
                 {
                     o.Property(e => e.Value).HasColumnName(nameof(Payment.Amount));
                     o.Property(e => e.Currency);
                 });
-            
+
             builder
                 .Property(e => e.PaymentMethod)
                 .IsRequired();
-            
+
             builder
                 .HasOne(e => e.Client)
                 .WithMany(e => e.Payments)
                 .HasForeignKey("ClientId")
                 .OnDelete(DeleteBehavior.Restrict);
-            
+
             builder
                 .HasOne(e => e.CreditCard)
                 .WithMany()

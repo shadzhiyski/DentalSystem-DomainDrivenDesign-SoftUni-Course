@@ -8,9 +8,11 @@ namespace DentalSystem.Infrastructure.Core.AppointmentScheduling.Configuration
     {
         public void Configure(EntityTypeBuilder<Client> builder)
         {
+            builder.ToTable(nameof(Client));
+
             builder
                 .HasKey(e => e.Id);
-            
+
             builder
                 .HasOne<Domain.ClientPatientManagement.Models.Client>()
                 .WithOne()

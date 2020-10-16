@@ -8,12 +8,14 @@ namespace DentalSystem.Infrastructure.Core.AppointmentScheduling.Configuration
     {
         public void Configure(EntityTypeBuilder<DentalTeam> builder)
         {
+            builder.ToTable(nameof(DentalTeam));
+
             builder
                 .HasKey(e => e.Id);
 
             builder
                 .Property(e => e.Name)
-                .IsRequired();             
+                .IsRequired();
         }
     }
 }

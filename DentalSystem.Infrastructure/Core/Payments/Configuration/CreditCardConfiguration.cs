@@ -8,13 +8,15 @@ namespace DentalSystem.Infrastructure.Core.Payments.Configuration
     {
         public void Configure(EntityTypeBuilder<CreditCard> builder)
         {
+            builder.ToTable(nameof(CreditCard));
+
             builder
                 .HasKey(e => e.Id);
-            
+
             builder
                 .Property(e => e.Number)
                 .IsRequired();
-            
+
             builder
                 .Property(e => e.CvcCode)
                 .IsRequired();
@@ -22,7 +24,7 @@ namespace DentalSystem.Infrastructure.Core.Payments.Configuration
             builder
                 .Property(e => e.ExpirationDate)
                 .IsRequired();
-            
+
             builder
                 .HasOne(e => e.Holder)
                 .WithMany(e => e.CreditCards)

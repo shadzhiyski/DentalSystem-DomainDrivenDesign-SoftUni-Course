@@ -8,6 +8,7 @@ namespace DentalSystem.Infrastructure.Core.AppointmentScheduling.Configuration
     {
         public void Configure(EntityTypeBuilder<Room> builder)
         {
+            builder.ToTable(nameof(Room));
             builder
                 .HasKey(e => e.Id);
 

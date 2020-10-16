@@ -8,6 +8,8 @@ namespace DentalSystem.Infrastructure.Core.ClientPatientManagement.Configuration
     {
         public void Configure(EntityTypeBuilder<Patient> builder)
         {
+            builder.ToTable(nameof(Patient));
+
             builder
                 .HasKey(e => e.Id);
 
@@ -18,7 +20,7 @@ namespace DentalSystem.Infrastructure.Core.ClientPatientManagement.Configuration
 
             builder
                 .Property(e => e.Gender)
-                .HasColumnName(nameof(Patient.Gender))                
+                .HasColumnName(nameof(Patient.Gender))
                 .IsRequired();
 
             builder
