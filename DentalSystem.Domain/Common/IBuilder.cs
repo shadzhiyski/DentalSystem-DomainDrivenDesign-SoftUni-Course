@@ -1,6 +1,6 @@
 namespace DentalSystem.Domain.Common
 {
-    public interface IFactory<out TEntity>
+    public interface IBuilder<out TEntity>
         where TEntity : IAggregateRoot
     {
         TEntity Build();

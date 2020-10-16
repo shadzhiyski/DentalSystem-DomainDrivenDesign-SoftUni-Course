@@ -4,7 +4,7 @@ using DentalSystem.Domain.Common.Models;
 
 namespace DentalSystem.Domain.Core.ClientPatientManagement.Builders
 {
-    public interface IClientBuilder : IFactory<Client>
+    public interface IClientBuilder : IBuilder<Client>
     {
         IClientBuilder WithUserId(string userId);
 

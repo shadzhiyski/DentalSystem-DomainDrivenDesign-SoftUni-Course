@@ -15,7 +15,7 @@
                 .Scan(scan => scan
                     .FromCallingAssembly()
                     .AddClasses(classes => classes
-                        .AssignableTo(typeof(IFactory<>)))
+                        .AssignableTo(typeof(IBuilder<>)))
                     .AsMatchingInterface()
                     .WithTransientLifetime());
 
