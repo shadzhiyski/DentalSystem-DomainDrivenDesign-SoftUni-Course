@@ -5,6 +5,7 @@ namespace DentalSystem.Domain.ClientPatientManagement.Builders
 {
     public class ClientBuilder : IClientBuilder
     {
+        private string _userId = default!;
         private Gender _gender = default!;
         private FullName _fullName = default!;
         private PhoneNumber _phoneNumber = default!;
@@ -12,7 +13,13 @@ namespace DentalSystem.Domain.ClientPatientManagement.Builders
         public Client Build()
         {
             var patient = new Patient(_gender);
-            return new Client(_fullName, _phoneNumber, patient);
+            return new Client(_userId, _fullName, _phoneNumber, patient);
+        }
+
+        public IClientBuilder WithUserid(string userId)
+        {
+            _userId = userId;
+            return this;
         }
 
         public IClientBuilder WithGender(Gender gender)
