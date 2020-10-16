@@ -14,6 +14,11 @@ namespace DentalSystem.Infrastructure.Core.AppointmentScheduling.Configuration
                 .HasKey(e => e.Id);
 
             builder
+                .HasOne<Domain.ClientPatientManagement.Models.Patient>()
+                .WithOne()
+                .HasForeignKey<Patient>(e => e.Id);
+
+            builder
                 .Property(e => e.Gender)
                 .HasColumnName(nameof(Patient.Gender))
                 .IsRequired();
