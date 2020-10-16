@@ -1,4 +1,4 @@
-using DentalSystem.Domain.AppointmentScheduling.Models;
+using DentalSystem.Domain.Core.AppointmentScheduling.Models;
 using DentalSystem.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,4 @@
-namespace DentalSystem.Domain.AppointmentScheduling.Models
+namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
 {
     public enum TreatmentType
     {

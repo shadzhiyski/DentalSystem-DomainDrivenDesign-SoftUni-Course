@@ -1,7 +1,7 @@
 using System;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.AppointmentScheduling.Models
+namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
 {
     public class Patient : Entity<Guid>
     {

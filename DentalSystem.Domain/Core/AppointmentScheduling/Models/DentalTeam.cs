@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.AppointmentScheduling.Models
+namespace DentalSystem.Domain.Core.AppointmentScheduling.Models
 {
     public class DentalTeam : Entity<Guid>
     {

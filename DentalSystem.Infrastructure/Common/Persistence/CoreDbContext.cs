@@ -1,4 +1,4 @@
-using DentalSystem.Domain.AppointmentScheduling.Models;
+using DentalSystem.Domain.Core.AppointmentScheduling.Models;
 using DentalSystem.Infrastructure.Core.AppointmentScheduling;
 using DentalSystem.Infrastructure.Core.ClientPatientManagement;
 using DentalSystem.Infrastructure.Core.Payments;

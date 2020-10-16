@@ -18,7 +18,7 @@ namespace DentalSystem.Infrastructure.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0-rc.1.20451.13");
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Appointment", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Appointment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("Appointment");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Client", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("TEXT");
@@ -57,7 +57,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("Client");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.DentalTeam", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalTeam", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("DentalTeam");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.DentalWorker", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalWorker", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -91,7 +91,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("DentalWorker");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Patient", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Patient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -113,7 +113,7 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("Patient");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Room", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Room", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -427,21 +427,21 @@ namespace DentalSystem.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Appointment", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Appointment", b =>
                 {
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.DentalTeam", "DentalTeam")
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalTeam", "DentalTeam")
                         .WithMany()
                         .HasForeignKey("DentalTeamId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.Patient", "Patient")
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.Room", "Room")
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.Room", "Room")
                         .WithMany()
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -476,11 +476,11 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Client", b =>
                 {
                     b.HasOne("DentalSystem.Domain.ClientPatientManagement.Models.Client", null)
                         .WithOne()
-                        .HasForeignKey("DentalSystem.Domain.AppointmentScheduling.Models.Client", "Id")
+                        .HasForeignKey("DentalSystem.Domain.Core.AppointmentScheduling.Models.Client", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -511,9 +511,9 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.DentalWorker", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalWorker", b =>
                 {
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.DentalTeam", "DentalTeam")
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalTeam", "DentalTeam")
                         .WithMany("Participants")
                         .HasForeignKey("DentalTeamId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -546,11 +546,11 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Patient", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Patient", b =>
                 {
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.Client", "Client")
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.Client", "Client")
                         .WithOne("Patient")
-                        .HasForeignKey("DentalSystem.Domain.AppointmentScheduling.Models.Patient", "ClientId")
+                        .HasForeignKey("DentalSystem.Domain.Core.AppointmentScheduling.Models.Patient", "ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -620,7 +620,7 @@ namespace DentalSystem.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DentalSystem.Domain.AppointmentScheduling.Models.Patient", null)
+                    b.HasOne("DentalSystem.Domain.Core.AppointmentScheduling.Models.Patient", null)
                         .WithOne()
                         .HasForeignKey("DentalSystem.Domain.ClientPatientManagement.Models.Patient", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -765,13 +765,13 @@ namespace DentalSystem.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.Client", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.Client", b =>
                 {
                     b.Navigation("Patient")
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DentalSystem.Domain.AppointmentScheduling.Models.DentalTeam", b =>
+            modelBuilder.Entity("DentalSystem.Domain.Core.AppointmentScheduling.Models.DentalTeam", b =>
                 {
                     b.Navigation("Participants");
                 });
