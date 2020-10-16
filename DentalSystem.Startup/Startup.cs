@@ -15,6 +15,7 @@ using DentalSystem.Web;
 using Microsoft.OpenApi.Models;
 using DentalSystem.Application;
 using DentalSystem.Domain;
+using DentalSystem.Web.Middleware;
 
 namespace DentalSystem.Startup
 {
@@ -80,6 +81,7 @@ namespace DentalSystem.Startup
             }
 
             app
+                .UseValidationExceptionHandler()
                 .UseHttpsRedirection()
                 .UseRouting()
                 .UseAuthorization()
