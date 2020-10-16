@@ -4,13 +4,12 @@
     using Application.Common;
     using Application.Common.Contracts;
     using Application.Identity;
-    using Common;
     // using Common.Events;
     using Common.Persistence;
-    using DentalSystem.Application.Identity;
-    using DentalSystem.Infrastructure.Common.Persistence;
+    using DentalSystem.Infrastructure.Core.AppointmentScheduling;
+    using DentalSystem.Infrastructure.Core.ClientPatientManagement;
+    using DentalSystem.Infrastructure.Core.Payments;
     using DentalSystem.Infrastructure.Identity;
-    using Identity;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
@@ -40,9 +39,9 @@
                             .MigrationsAssembly(typeof(CoreDbContext).Assembly.FullName)
                     )
                 )
-                ;// .AddScoped<IDealershipDbContext>(provider => provider.getservice<coredbcontext>())
-                // .addscoped<istatisticsdbcontext>(provider => provider.getservice<coredbcontext>())
-                // .addtransient<iinitializer, databaseInitializer>();
+                .AddScoped<IClientPatientManagementDbContext>(sp => sp.GetService<CoreDbContext>())
+                .AddScoped<IAppointmentSchedulingDbContext>(sp => sp.GetService<CoreDbContext>())
+                .AddScoped<IPaymentsDbContext>(sp => sp.GetService<CoreDbContext>());
 
         internal static IServiceCollection AddRepositories(this IServiceCollection services)
             => services
