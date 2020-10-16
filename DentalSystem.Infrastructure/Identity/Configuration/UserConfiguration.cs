@@ -1,3 +1,4 @@
+using DentalSystem.Domain.ClientPatientManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -10,7 +11,7 @@ namespace DentalSystem.Infrastructure.Identity.Configuration
             builder
                 .HasOne(u => u.Client)
                 .WithOne()
-                .HasForeignKey<User>("ClientId")
+                .HasForeignKey<Client>("UserId")
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
