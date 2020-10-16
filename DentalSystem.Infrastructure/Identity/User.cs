@@ -1,6 +1,6 @@
 using DentalSystem.Application.Identity;
-using DentalSystem.Domain.ClientPatientManagement.Exceptions;
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Exceptions;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace DentalSystem.Infrastructure.Identity

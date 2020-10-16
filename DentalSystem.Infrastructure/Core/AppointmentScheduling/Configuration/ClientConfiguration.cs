@@ -14,7 +14,7 @@ namespace DentalSystem.Infrastructure.Core.AppointmentScheduling.Configuration
                 .HasKey(e => e.Id);
 
             builder
-                .HasOne<Domain.ClientPatientManagement.Models.Client>()
+                .HasOne<Domain.Core.ClientPatientManagement.Models.Client>()
                 .WithOne()
                 .HasForeignKey<Client>(e => e.Id);
 

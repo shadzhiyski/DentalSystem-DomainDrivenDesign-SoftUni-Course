@@ -1,7 +1,7 @@
 using System;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.ClientPatientManagement.Models
+namespace DentalSystem.Domain.Core.ClientPatientManagement.Models
 {
     public class Patient : Entity<Guid>
     {

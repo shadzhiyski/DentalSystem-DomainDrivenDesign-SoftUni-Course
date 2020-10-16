@@ -50,11 +50,11 @@ namespace DentalSystem.Infrastructure.Common.Persistence
 
         DbSet<Room> IAppointmentSchedulingDbContext.Rooms => Set<Room>();
 
-        DbSet<Domain.ClientPatientManagement.Models.Client> IClientPatientManagementDbContext.Clients
-            => Set<Domain.ClientPatientManagement.Models.Client>();
+        DbSet<Domain.Core.ClientPatientManagement.Models.Client> IClientPatientManagementDbContext.Clients
+            => Set<Domain.Core.ClientPatientManagement.Models.Client>();
 
-        DbSet<Domain.ClientPatientManagement.Models.Patient> IClientPatientManagementDbContext.Patients
-            => Set<Domain.ClientPatientManagement.Models.Patient>();
+        DbSet<Domain.Core.ClientPatientManagement.Models.Patient> IClientPatientManagementDbContext.Patients
+            => Set<Domain.Core.ClientPatientManagement.Models.Patient>();
 
         DbSet<Domain.Payments.Models.Client> IPaymentsDbContext.Clients
             => Set<Domain.Payments.Models.Client>();

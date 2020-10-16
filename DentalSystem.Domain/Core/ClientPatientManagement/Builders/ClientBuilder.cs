@@ -1,7 +1,7 @@
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.ClientPatientManagement.Builders
+namespace DentalSystem.Domain.Core.ClientPatientManagement.Builders
 {
     public class ClientBuilder : IClientBuilder
     {

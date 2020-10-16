@@ -1,4 +1,4 @@
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

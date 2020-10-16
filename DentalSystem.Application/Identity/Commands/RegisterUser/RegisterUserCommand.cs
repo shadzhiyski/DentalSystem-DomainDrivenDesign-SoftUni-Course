@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Common;
     using DentalSystem.Application.Core.AppointmentScheduling;
-    using DentalSystem.Domain.ClientPatientManagement.Builders;
+    using DentalSystem.Domain.Core.ClientPatientManagement.Builders;
     using MediatR;
 
     public class RegisterUserCommand : UserInputModel, IRequest<Result>

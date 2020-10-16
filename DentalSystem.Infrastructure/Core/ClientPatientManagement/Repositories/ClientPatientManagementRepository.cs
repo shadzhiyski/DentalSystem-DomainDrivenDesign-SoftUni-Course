@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using DentalSystem.Application.Core.AppointmentScheduling;
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 using DentalSystem.Infrastructure.Common.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 

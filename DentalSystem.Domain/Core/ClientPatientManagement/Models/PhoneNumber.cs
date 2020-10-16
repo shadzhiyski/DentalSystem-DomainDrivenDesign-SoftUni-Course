@@ -1,4 +1,4 @@
-﻿namespace DentalSystem.Domain.ClientPatientManagement.Models
+﻿namespace DentalSystem.Domain.Core.ClientPatientManagement.Models
 {
     using System.Text.RegularExpressions;
     using CarRentalSystem.Domain.Common.Models;

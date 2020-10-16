@@ -1,4 +1,4 @@
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 using DentalSystem.Infrastructure.Common.Persistence;
 using Microsoft.EntityFrameworkCore;
 

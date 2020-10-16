@@ -1,6 +1,6 @@
 using DentalSystem.Domain.Common;
 
-namespace DentalSystem.Domain.ClientPatientManagement.Exceptions
+namespace DentalSystem.Domain.Core.ClientPatientManagement.Exceptions
 {
     public class InvalidClientException : BaseDomainException
     {

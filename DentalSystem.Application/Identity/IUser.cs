@@ -1,6 +1,6 @@
 
 
-using DentalSystem.Domain.ClientPatientManagement.Models;
+using DentalSystem.Domain.Core.ClientPatientManagement.Models;
 
 namespace DentalSystem.Application.Identity
 {

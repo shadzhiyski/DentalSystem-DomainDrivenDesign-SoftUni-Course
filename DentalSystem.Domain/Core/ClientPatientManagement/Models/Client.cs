@@ -2,7 +2,7 @@ using System;
 using DentalSystem.Domain.Common;
 using DentalSystem.Domain.Common.Models;
 
-namespace DentalSystem.Domain.ClientPatientManagement.Models
+namespace DentalSystem.Domain.Core.ClientPatientManagement.Models
 {
     public class Client : Entity<Guid>, IAggregateRoot
     {
