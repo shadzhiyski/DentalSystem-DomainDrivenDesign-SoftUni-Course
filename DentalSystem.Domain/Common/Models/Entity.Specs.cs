@@ -1,8 +1,7 @@
-﻿namespace DomainSystem.Domain.Common.Models
+﻿namespace DentalSystem.Domain.Common.Models
 {
     using System;
-    using DentalSystem.Domain.Common.Models;
-    using DentalSystem.Domain.Core.AppointmentScheduling.Models;
+    using Core.AppointmentScheduling.Models;
     using FluentAssertions;
     using Xunit;
 
