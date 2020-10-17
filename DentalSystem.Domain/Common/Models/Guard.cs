@@ -1,4 +1,4 @@
-﻿namespace CarRentalSystem.Domain.Common.Models
+﻿namespace DentalSystem.Domain.Common.Models
 {
     using DentalSystem.Domain.Common;
 

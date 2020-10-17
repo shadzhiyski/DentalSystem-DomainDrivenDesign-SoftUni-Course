@@ -1,8 +1,6 @@
 ﻿namespace DentalSystem.Domain.Core.ClientPatientManagement.Models
 {
     using System.Text.RegularExpressions;
-    using CarRentalSystem.Domain.Common.Models;
-    using Common;
     using Common.Models;
     using Exceptions;
     using static Common.Models.ModelConstants.PhoneNumber;
@@ -29,7 +27,7 @@
 
         public static implicit operator PhoneNumber(string number) => new PhoneNumber(number);
 
-        private void Validate(string phoneNumber) 
+        private void Validate(string phoneNumber)
             => Guard.ForStringLength<InvalidPhoneNumberException>(
                 phoneNumber,
                 MinPhoneNumberLength,
